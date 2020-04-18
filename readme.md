@@ -1,5 +1,7 @@
 # active-win [![Build Status](https://travis-ci.org/sindresorhus/active-win.svg?branch=master)](https://travis-ci.org/sindresorhus/active-win)
 
+FORK
+
 Get metadata about the [active window](https://en.wikipedia.org/wiki/Active_window) (title, id, bounds, owner, URL, etc)
 
 Works on macOS, Linux, Windows.
@@ -15,7 +17,7 @@ $ npm install active-win
 ## Usage
 
 ```js
-const activeWin = require('active-win');
+const activeWin = require("active-win");
 
 (async () => {
 	console.log(await activeWin());
@@ -42,7 +44,6 @@ const activeWin = require('active-win');
 })();
 ```
 
-
 ## API
 
 ### activeWin()
@@ -55,27 +56,19 @@ Returns an `Object` with the result, or `undefined` if there is no active window
 
 ## Result
 
-- `platform` *(string)* - `'macos'` | `'linux'` | `'windows'`
-- `title` *(string)* - Window title
-- `id` *(number)* - Window identifier
-- `bounds` *(Object)* - Window position and size
-	- `x` *(number)*
-	- `y` *(number)*
-	- `width` *(number)*
-	- `height` *(number)*
-- `owner` *(Object)* - App that owns the window
-	- `name` *(string)* - Name of the app
-	- `processId` *(number)* - Process identifier
-	- `bundleId` *(string)* - Bundle identifier *(macOS only)*
-	- `path` *(string)* - Path to the app
-- `url` *(string?)* - URL of the active browser tab if the active window is Safari, Chrome, Edge, or Brave *(macOS only)*
-- `memoryUsage` *(number)* - Memory usage by the window owner process
+- `platform` _(string)_ - `'macos'` | `'linux'` | `'windows'`
+- `title` _(string)_ - Window title
+- `id` _(number)_ - Window identifier
+- `bounds` _(Object)_ - Window position and size - `x` _(number)_ - `y` _(number)_ - `width` _(number)_ - `height` _(number)_
+- `owner` _(Object)_ - App that owns the window - `name` _(string)_ - Name of the app - `processId` _(number)_ - Process identifier - `bundleId` _(string)_ - Bundle identifier _(macOS only)_ - `path` _(string)_ - Path to the app
+- `url` _(string?)_ - URL of the active browser tab if the active window is Safari, Chrome, Edge, or Brave _(macOS only)_
+- `memoryUsage` _(number)_ - Memory usage by the window owner process
 
 ## OS support
 
 It works on macOS, Linux, and Windows 7+.
 
-**Note**: On Windows, there isn't a clear notion of a "Window ID". Instead it returns the memory address of the window "handle" in the `id` property. That "handle" is unique per window, so it can be used to identify them. [Read more…](https://msdn.microsoft.com/en-us/library/windows/desktop/ms632597(v=vs.85).aspx#window_handle).
+**Note**: On Windows, there isn't a clear notion of a "Window ID". Instead it returns the memory address of the window "handle" in the `id` property. That "handle" is unique per window, so it can be used to identify them. [Read more…](<https://msdn.microsoft.com/en-us/library/windows/desktop/ms632597(v=vs.85).aspx#window_handle>).
 
 ## Related
 
